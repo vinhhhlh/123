@@ -1,0 +1,14 @@
+local commonValue = "\226\129\130\141"  -- Simpan nilai yang sama di variabel
+
+for i = 1, 40 do 
+    local args = {
+        [1] = {
+            [1] = {
+                [1] = commonValue,  -- Gunakan nilai dari variabel
+                [2] = i  -- Nilai [2] berubah sesuai dengan iterasi
+            }
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+end
