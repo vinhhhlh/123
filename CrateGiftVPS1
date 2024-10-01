@@ -1,0 +1,24 @@
+local commonValue3 = "\226\129\130\\"  -- Simpan nilai yang sama di variabel
+local userId = 7356585003  -- User ID yang sama rtlxfr
+
+local actions = {
+    {"Buy1", 35},  -- Aksi dan jumlah pengulangan untuk script 1
+}
+
+for _, action in ipairs(actions) do
+    local item, repeatCount = action[1], action[2]  -- Ambil aksi dan jumlah pengulangan
+    for i = 1, repeatCount do
+        local args = {
+            [1] = {
+                [1] = {
+                    [1] = commonValue3,
+                    [2] = "UltraDrillCrate",
+                    [3] = item,  -- Gunakan item dari aksi
+                    [4] = userId
+                }
+            }
+        }
+
+        game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+    end
+end
