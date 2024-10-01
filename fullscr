@@ -1,0 +1,27 @@
+-- Cek jika PlaceId sesuai
+if game.PlaceId == 13775256536 then
+    print("FULL SCRIPT IS RUNNING")
+    
+    -- Fungsi untuk mengeksekusi loadstring dengan jeda waktu
+    local function executeLoadString(url, waitTime)
+        loadstring(game:HttpGet(url))()  -- Eksekusi loadstring
+        wait(waitTime)  -- Tunggu sesuai waktu yang ditentukan
+    end
+
+    -- Eksekusi loadstring 0
+    executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/TPShop", 0)
+
+    -- Eksekusi loadstring 1
+    executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/Missions", 3)
+
+    -- Eksekusi loadstring 2
+    executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/EventPass", 2)
+
+    -- Eksekusi loadstring 3
+    executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/CrateGiftVPS1", 5)
+
+    -- Eksekusi loadstring 4
+    executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/PotionUse", 0)  -- Tidak perlu tunggu setelah yang terakhir
+else
+    print("Script tidak dijalankan karena PlaceId tidak sesuai.")
+end
