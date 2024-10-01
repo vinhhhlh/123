@@ -18,7 +18,7 @@ if game.PlaceId == 13775256536 then
     executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/EventPass", 2)
 
     -- Eksekusi loadstring 3
-    executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/CrateGiftVPS1", 5)
+    executeLoadString("https://raw.githubusercontent.com/vinhhhlh/123/main/CrateGiftVPS1", 5)
 
     -- Eksekusi loadstring 4
     executeLoadString("https://raw.githubusercontent.com/LocasTheBoys/tetes/refs/heads/main/PotionUse", 0)  -- Tidak perlu tunggu setelah yang terakhir
