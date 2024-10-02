@@ -1,0 +1,86 @@
+--teleport to world event
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\226\129\130\146"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+
+for i = 1, 10 do
+--Mission --
+--destroy
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\226\129\130\140",
+            [2] = "KillToilets"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+
+--win
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\226\129\130\140",
+            [2] = "WinMatches"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+
+--play
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\226\129\130\140",
+            [2] = "PlayForHours"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+end
+
+
+
+--Event pass--
+
+for i = 1, 40 do 
+    local args = {
+        [1] = {
+            [1] = {
+                [1] = "\226\129\130\141",
+                [2] = i 
+            }
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+end
+
+
+
+--BUYING--
+for i = 1, 50 do
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\226\129\130\\",
+            [2] = "UltraDrillCrate",
+            [3] = "Buy1",
+            [4] = 6095270041
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+
+end
+
