@@ -81,8 +81,8 @@ end
 local commonValue = "\226\129\130^"  -- Simpan nilai yang sama di variabel
 
 local actions = {
-    {"2xDrillBoost", 10},  -- Aksi dan jumlah pengulangan untuk script 1
-    {"2xDrillXPBoost", 3}  -- Aksi dan jumlah pengulangan untuk script 2
+    {"2xDrillBoost", 100},  -- Aksi dan jumlah pengulangan untuk script 1
+    {"2xDrillXPBoost", 100}  -- Aksi dan jumlah pengulangan untuk script 2
 }
 
 for _, action in ipairs(actions) do
