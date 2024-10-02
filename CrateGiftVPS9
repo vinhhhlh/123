@@ -1,4 +1,4 @@
---teleport to world event
+-- Teleport to world event
 local args = {
     [1] = {
         [1] = {
@@ -10,48 +10,44 @@ local args = {
 game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 
 for i = 1, 10 do
---Mission --
---destroy
-local args = {
-    [1] = {
+    -- Mission: destroy
+    local args = {
         [1] = {
-            [1] = "\226\129\130\140",
-            [2] = "KillToilets"
+            [1] = {
+                [1] = "\226\129\130\140",
+                [2] = "KillToilets"
+            }
         }
     }
-}
 
-game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+    game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 
---win
-local args = {
-    [1] = {
+    -- Mission: win
+    local args = {
         [1] = {
-            [1] = "\226\129\130\140",
-            [2] = "WinMatches"
+            [1] = {
+                [1] = "\226\129\130\140",
+                [2] = "WinMatches"
+            }
         }
     }
-}
 
-game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+    game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 
---play
-local args = {
-    [1] = {
+    -- Mission: play
+    local args = {
         [1] = {
-            [1] = "\226\129\130\140",
-            [2] = "PlayForHours"
+            [1] = {
+                [1] = "\226\129\130\140",
+                [2] = "PlayForHours"
+            }
         }
     }
-}
 
-game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+    game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 end
 
-
-
---Event pass--
-
+-- Event pass
 for i = 1, 40 do 
     local args = {
         [1] = {
@@ -65,22 +61,42 @@ for i = 1, 40 do
     game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 end
 
-
-
---BUYING--
+-- BUYING
 for i = 1, 50 do
-local args = {
-    [1] = {
+    local args = {
         [1] = {
-            [1] = "\226\129\130\\",
-            [2] = "UltraDrillCrate",
-            [3] = "Buy1",
-            [4] = 6095264996
+            [1] = {
+                [1] = "\226\129\130\\",
+                [2] = "UltraDrillCrate",
+                [3] = "Buy1",
+                [4] = 6095264996
+            }
         }
     }
-}
 
-game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
-
+    game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 end
 
+-- Adding new boost actions
+local commonValue = "\226\129\130^"  -- Simpan nilai yang sama di variabel
+
+local actions = {
+    {"2xDrillBoost", 100},  -- Aksi dan jumlah pengulangan untuk script 1
+    {"2xDrillXPBoost", 100}  -- Aksi dan jumlah pengulangan untuk script 2
+}
+
+for _, action in ipairs(actions) do
+    local boostType, repeatCount = action[1], action[2]  -- Ambil aksi dan jumlah pengulangan
+    for i = 1, repeatCount do
+        local args = {
+            [1] = {
+                [1] = {
+                    [1] = commonValue,  -- Gunakan nilai dari variabel
+                    [2] = boostType      -- Gunakan jenis boost dari aksi
+                }
+            }
+        }
+
+        game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
+    end
+end
