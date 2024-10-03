@@ -61,34 +61,6 @@ for i = 1, 40 do
     game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
 end
 
-    while wait() do
-        if game:GetService("Players").LocalPlayer.leaderstats.Gems.Value >= 500 then
-            local args = {
-                [1] = {
-                    [1] = {
-                        [1] = "\226\129\130_",
-                        [2] = "2xDrillBoost",
-                        [3] = "Purchase10"
-                    }
-                }
-            }
-
-            game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
-        elseif game:GetService("Players").LocalPlayer.leaderstats.Gems.Value < 500 and
-            game:GetService("Players").LocalPlayer.leaderstats.Gems.Value >= 100 then
-            local args = {
-                [1] = {
-                    [1] = {
-                        [1] = "\226\129\130_",
-                        [2] = "2xDrillBoost",
-                        [3] = "Purchase1"
-                    }
-                }
-            }
-
-            game:GetService("ReplicatedStorage").NetworkingContainer.DataRemote:FireServer(unpack(args))
-        end
-
 -- BUYING
 for i = 1, 50 do
     local args = {
